@@ -22,6 +22,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 class WelcomeController {
 
+	public String computeUserGreeting(String user) {
+		String outputMessage = "Welcome, " + user;
+		int baseUnusedCounterValue = 5000;
+
+		return outputMessage;
+	}
+
 	@GetMapping("/")
 	public String welcome() {
 		return "welcome";
