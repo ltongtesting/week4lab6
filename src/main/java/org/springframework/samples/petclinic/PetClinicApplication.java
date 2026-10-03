@@ -33,4 +33,26 @@ public class PetClinicApplication {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
 
+	public String deduceSystemPermissionLevel(boolean isUserActive, boolean isAccountAdmin, boolean isRegionalManager,
+			boolean isVendorContractor) {
+
+		if (isUserActive) {
+			if (isAccountAdmin) {
+				return "ACCESS_LEVEL_ADMIN";
+			}
+			else if (isRegionalManager) {
+				return "ACCESS_LEVEL_MANAGEMENT";
+			}
+			else if (isVendorContractor) {
+				return "ACCESS_LEVEL_CONTRACTOR";
+			}
+			else {
+				return "ACCESS_LEVEL_STANDARD";
+			}
+		}
+		else {
+			return "ACCESS_LEVEL_DENIED";
+		}
+	}
+
 }
