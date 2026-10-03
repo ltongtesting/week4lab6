@@ -1,4 +1,4 @@
-name: Codee Quality Analysis
+name: Code Quality Analysis
 
 on:
   push:
